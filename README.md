@@ -62,4 +62,5 @@ Bazele de date relaționale sunt folosite în implementarea multor aplicații we
 </br>ii)<i><b> Full Database</i></b>
 </br>&nbsp;&nbsp;&nbsp;- Se scaleaza baza de date in cazul in care este umpluta la capacitate maxima (nu mai este loc de inserare in niciun nod)
 </br>&nbsp;&nbsp;&nbsp;- In acest caz, se creaza un nou nod de fiecare data cu aceeași capacitate <Max_Capacitaty> ca a celorlalte noduri. 
+
                                             ------Implementare------
