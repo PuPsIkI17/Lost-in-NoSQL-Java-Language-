@@ -25,40 +25,40 @@ Bazele de date relaționale sunt folosite în implementarea multor aplicații we
   
   Limbajul de Interogare – LQL
 </br>Ca orice baza de date, fie SQL sau NoSQL, suporta un set de comenzi pentru crearea entităților, inserarea de instanțe ale entităților, actualizare si ștergere. Pentru baza de date LNoSQL acestea sunt:
-</br>i) Creare Baza de date:
+</br>i)<i><b> Creare Baza de date:</i></b>
 </br>- Comanda prin care se creează baza de date cu constrângerile menționate de număr de noduri si capacitate maxima a unui nod.
 </br>- Comanda: CREATEDB "Db_Name" "No_Nodes" "Max_Capacity"
-</br>ii) Creare Entitate:
+</br>ii)<i><b> Creare Entitate:</i></b>
 </br>- Comanda prin care se creează o entitate cu un factor de replicare si atributele sale care pot fi de tipul: String, Integer sau Float. Ordinea atributelor din comanda de creare se reflecta si in celelalte comenzi.
 </br>- Primul atribut este considerat cheie primara – după care o instanță a unei entități este identificata unic.
 </br>- Comanda: CREATE "Entity" "RF" "No_Attributes" Atribute_1 Tip_Atribut1  Atribute_2 Tip_Atribut2 …. Atribute_n Tip_Atributn
-</br>iii) Inserare instanță:
+</br>iii)<i><b> Inserare instanță:</i></b>
 </br>- Comanda prin care se inserează o instanță a unei entități. Operația înseamnă replicarea instanței pe nodurile bazei de date in funcție de RF specific entității.
 </br>- Inserarea într-un nod se face ordonat după cea mai recentă intrare.
 </br>- Comanda: INSERT "Entity" "Val_Attr1" "Val_Attr2" ... "Val_Attrn"
-</br>iv) Ștergere instanță:
+</br>iv)<i><b> Ștergere instanță:</i></b>
 </br>- Se vor șterge toate copiile instanței respective de pe toate nodurile în care a fost inserată
 </br>- Val_attr1 reprezinta valoarea cheii primare pentru acea instanță
 </br>- În cazul în care nu exista se printeaza un mesaj de eroare: „NO INSTANCE TO DELETE”
 </br>- Comanda: DELETE "Entity" "Primary_Key"
-</br>v) Actualizare instanță:
+</br>v)<i><b> Actualizare instanță:</i></b>
 </br>- Actualizează toate copiile instanței respective de pe toate nodurile în care a fost inserata
 </br>- Comanda: UPDATE "Entity" "Primary_Key" "Attr1" "New_Val_Attr1" ... "Attrn" "New_Val_Attrn"
-</br>vi) Regăsire instanță
+</br>vi)<i><b> Regăsire instanță</i></b>
 </br>- Returnează o instanță cu toate valorile și nodurile în care se află.
 </br>- Daca nu exista acea instanță se returneaza un mesaj de eroare „NO INSTANCE FOUND”
 </br>- Formatul pentru printarea valorile de tip float foloseste DecimalFormat cu formatul #.##
 </br>- Comanda: GET "Entity" "Primary_Key"
 </br>- Rezultat: "Node_1" "Node_2"..."Node_n" "Entity" "Attr1":"Val_Attr1" ... "Attrn":"Val_Attrn"
-</br>vii) Print baza de date
+</br>vii)<i><b> Print baza de date</i></b>
 </br>- Printează întreaga baza de date împreuna cu toate nodurile si datele ce se regăsesc la acel moment în fiecare nod.
 </br>- În cazul în care baza de date nu conține nicio instanță a unei entități se va afișa mesajul de eroare „EMPTY DB”
-</br>- Comanda: SNAPSHOTDB
+</br>- Comanda: SNAPSHOTDB</i></b>
 </br>- Rezultat: "Nod_1" "ENTITY1" "Attr1":"Val_Attr1" ... "Attrn":"Val_Attrn"  "ENTITY2" "Attr1: "Val_Attr1" ... "Attrn":"Val_Attrn"  ... "Nod_2" "ENTITY1" "Attr1":"Val_Attr1" ... "Attrn":"Val_Attrn"  ...
-</br>i) Clean-up
+</br>i)<i><b> Clean-up</i></b>
 </br>- Comanda are ca efect ștergerea instanțelor mai vechi de un anumit timestamp (nanosecunde) dat ca parametru.
 </br>- De asemenea, se pastreaza în continuare ordinea de scriere în noduri după cele mai recente intrări.
 </br>- Comanda: CLEANUP "DB_NAME" "TIMESTAMP(ns)"
-</br>ii) Full Database
+</br>ii)<i><b> Full Database</i></b>
 </br>- Se scaleaza baza de date in cazul in care este umpluta la capacitate maxima (nu mai este loc de inserare in niciun nod)
 </br>- In acest caz, se creaza un nou nod de fiecare data cu aceeași capacitate <Max_Capacitaty> ca a celorlalte noduri. 
