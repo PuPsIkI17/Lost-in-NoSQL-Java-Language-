@@ -14,7 +14,7 @@ Bazele de date relaționale sunt folosite în implementarea multor aplicații we
  
  Baza de date LNoSQL trebuie sa asigure si redundanta datelor, ceea ce înseamnă ca datele vor putea fi disponibile indiferent de cate noduri sunt up la un moment dat. 
  
- În acest sens sunt implementate următoarele funcționalități:  
+În acest sens sunt implementate următoarele funcționalități:  
 </br>-Fiecare entitate are o caracteristica ce poate fi configurată la creare numita factor de replicare (RF), ce va fi mai mica sau egala cu numărul de noduri N (RF <= N).  Acest factor care reprezintă numărul de copii ale instanțelor entităților pe fiecare dintre nodurile bazei de date (de exemplu, daca avem o baza de date cu N = 5 noduri si entitatea Produs are RF = 3 atunci orice intrare a entității Produs va trebui scrisa in 3 din cele 5 noduri ale bazei de date).  
 </br>- Un nod al bazei de date are capacitate limitata (MaxCapacity) si daca se atinge aceasta limita scrierea se face în următorul nod care este liber (nu și-a atins capacitatea maximă). 
 </br>- Un nod al bazei de date poate sa conțină entități de toate tipurile declarate și nu este constrâns în a stoca un singur tip de entitate. 
