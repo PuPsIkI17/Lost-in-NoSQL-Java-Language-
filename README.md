@@ -1,5 +1,4 @@
-# Projects
-Lost in NoSQL(Java Language)
+# Lost in NoSQL(Java Language)
 Implementing a NoSQL database, distributed on multiple nodes called LNoSQL, which supports a simple query language.
 
 Pislari Vadim -> Facultatea Automatica si Calculatoare -> Universitatea Politehnica Bucuresti
